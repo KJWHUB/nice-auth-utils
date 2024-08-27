@@ -4,16 +4,30 @@
   "description": "A utility library for NICE authentication",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "pnpm run build"
+    "prepack": "pnpm build",
+    "build": "pnpm clean && pnpm build:tsc && pnpm build:js",
+    "build:tsc": "pnpm tsc --emitDeclarationOnly",
+    "build:js": "node build.js",
+    "clean": "rm -rf dist"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^22.5.0",
+    "esbuild": "^0.23.1",
     "typescript": "^5.5.4"
-  }
+  },
+  "packageManager": "pnpm@8.10.5"
 }
