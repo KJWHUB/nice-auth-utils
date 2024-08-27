@@ -2,6 +2,7 @@
   "name": "nice-auth-utils",
   "version": "0.0.1",
   "description": "A utility library for NICE authentication",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
