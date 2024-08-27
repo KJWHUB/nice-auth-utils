@@ -2,6 +2,21 @@
   "name": "nice-auth-utils",
   "version": "0.0.1",
   "description": "A utility library for NICE authentication",
+  "license": "MIT",
+  "keywords": [
+    "nice-auth-utils",
+    "nice",
+    "auth",
+    "utils"
+  ],
+  "author": {
+    "name": "KJWHUB",
+    "email": "art.1025p@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KJWHUB/nice-auth-utils"
+  },
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,11 +36,9 @@
     "build:tsc": "pnpm tsc --emitDeclarationOnly",
     "build:js": "node build.js",
     "clean": "rm -rf dist",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.9.1",
     "@types/eslint__js": "^8.42.3",
@@ -38,5 +51,8 @@
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.3.0"
   },
-  "packageManager": "pnpm@8.10.5"
+  "packageManager": "pnpm@8.10.5",
+  "engines": {
+    "node": ">=18.16.0"
+  }
 }
