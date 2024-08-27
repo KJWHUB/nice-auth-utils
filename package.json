@@ -20,15 +20,23 @@
     "build": "pnpm clean && pnpm build:tsc && pnpm build:js",
     "build:tsc": "pnpm tsc --emitDeclarationOnly",
     "build:js": "node build.js",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@types/eslint__js": "^8.42.3",
     "@types/node": "^22.5.0",
     "esbuild": "^0.23.1",
-    "typescript": "^5.5.4"
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.3.0"
   },
   "packageManager": "pnpm@8.10.5"
 }
