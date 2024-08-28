@@ -1,3 +1,3 @@
-export function hello(name: string): string {
-  return `Hello, ${name}!`;
-}
+import { useNiceIdentityVerification } from "./useNice";
+
+export const useNiceAuth = useNiceIdentityVerification;

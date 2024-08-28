@@ -9,6 +9,8 @@
     "strict": true,
     "esModuleInterop": true,
     "emitDeclarationOnly": true,
+    "moduleDetection": "force",
+    "moduleResolution": "bundler",
     "declarationDir": "./dist"
   },
   "include": ["src"],
