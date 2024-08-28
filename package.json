@@ -2,44 +2,57 @@
   "name": "nice-auth-utils",
   "version": "0.0.2",
   "description": "A utility library for NICE authentication",
-  "license": "MIT",
   "keywords": [
     "nice-auth-utils",
     "nice",
     "auth",
     "utils"
   ],
-  "author": {
-    "name": "KJWHUB",
-    "email": "art.1025p@gmail.com"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/KJWHUB/nice-auth-utils"
   },
+  "license": "MIT",
+  "author": {
+    "name": "KJWHUB",
+    "email": "art.1025p@gmail.com"
+  },
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     }
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "src"
   ],
   "scripts": {
-    "prepack": "pnpm build",
     "build": "pnpm clean && pnpm build:tsc && pnpm build:js",
-    "build:tsc": "pnpm tsc --emitDeclarationOnly",
     "build:js": "node build.js",
+    "build:tsc": "pnpm tsc --emitDeclarationOnly",
     "clean": "rm -rf dist",
-    "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint": "eslint . && prettier --check .",
+    "lint:fix": "eslint --fix . && prettier --write .",
+    "prepack": "pnpm build",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.!(cjs|js|ts)": "prettier --write --ignore-unknown",
+    "*.(cjs|js|ts)": [
+      "eslint --fix .",
+      "prettier --write"
+    ],
+    "package.json": "sort-package-json"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/types": "^19.0.3",
     "@eslint/js": "^9.9.1",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^22.5.0",
@@ -47,7 +60,10 @@
     "eslint": "^9.9.1",
     "eslint-config-prettier": "^9.1.0",
     "globals": "^15.9.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9",
     "prettier": "^3.3.3",
+    "sort-package-json": "^2.10.1",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.3.0"
   },
