@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>playground</title>
+    <!-- init -->
+    <script src="../dist/index.js" type="module"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>playground</h1>
+      <p>플레이그라운드입니다.</p>
+
+      <p id="greeting"></p>
+      <script type="module">
+        import { hello } from "../dist/index.js";
+        // Assuming the `hello` function is exported from `index.js`
+        document.getElementById("greeting").innerText = hello("World");
+      </script>
+    </div>
+  </body>
+</html>
