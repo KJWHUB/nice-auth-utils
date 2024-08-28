@@ -70,7 +70,7 @@ export const createNiceForm = (newWindow: Window, encodeData: string) => {
 export const closeWindow = () => {
   console.group("closeWindow");
   const w = window;
-  const EncodeData = getQueryParam("encodeData");
+  const EncodeData = getQueryParam("EncodeData");
   console.log(EncodeData);
   w.opener.postMessage(
     {
