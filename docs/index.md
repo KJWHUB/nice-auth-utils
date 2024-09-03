@@ -12,11 +12,8 @@ hero:
     colorscheme: glyph
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 시작하기
+      link: /guide
 features:
   - icon: 💡
     title: 손쉬운 사용

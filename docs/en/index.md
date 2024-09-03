@@ -12,11 +12,8 @@ hero:
     colorscheme: glyph
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: Get Started
       link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
 features:
   - icon: 💡
     title: Easy to use
