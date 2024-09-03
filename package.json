@@ -52,6 +52,9 @@
     ],
     "package.json": "sort-package-json"
   },
+  "dependencies": {
+    "@types/eslint-config-prettier": "^6.11.3"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
