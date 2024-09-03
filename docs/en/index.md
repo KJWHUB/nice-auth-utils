@@ -6,6 +6,10 @@ hero:
   name: "Nice Auth Utils"
   text: "A utility library for NICE authentication"
   tagline: Apply NICE authentication to your applications faster.
+  image:
+    src: /SvgSpinnersBlocksScale.svg
+    alt: Logo-img
+    colorscheme: glyph
   actions:
     - theme: brand
       text: Markdown Examples
@@ -14,10 +18,10 @@ hero:
       text: API Examples
       link: /api-examples
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - icon: 💡
+    title: Easy to use
+    details: Execute NICE authentication easily with a single method call!
+  - icon: 🛠️
+    title: Minimize unnecessary code
+    details: Focus more on the essence of your application.
 ---
