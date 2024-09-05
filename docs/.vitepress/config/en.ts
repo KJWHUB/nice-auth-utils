@@ -3,6 +3,13 @@ import { defineConfig } from "vitepress";
 export const en = defineConfig({
   lang: "en-US",
   themeConfig: {
+    lastUpdated: {
+      text: "Last updated",
+      formatOptions: {
+        dateStyle: "full",
+        timeStyle: "medium",
+      },
+    },
     sidebar: {
       "/en/guide/": [
         {

@@ -3,6 +3,8 @@ import { defineConfig } from "vitepress";
 export const shared = defineConfig({
   title: "nice-auth-utils",
 
+  base: "/nice-auth-utils/",
+
   rewrites: {
     "ko/:rest*": ":rest*",
   },

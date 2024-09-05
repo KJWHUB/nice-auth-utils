@@ -3,6 +3,13 @@ import { defineConfig } from "vitepress";
 export const ko = defineConfig({
   lang: "ko-KR",
   themeConfig: {
+    lastUpdated: {
+      text: "마지막 업데이트 날짜",
+      formatOptions: {
+        dateStyle: "full",
+        timeStyle: "medium",
+      },
+    },
     sidebar: {
       "/guide/": [
         {
