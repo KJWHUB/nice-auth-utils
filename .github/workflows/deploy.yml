@@ -40,8 +40,8 @@ jobs:
           cache: pnpm # 또는 pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      # - name: Install dependencies
-      # run: pnpm ci # 또는 pnpm install / yarn install / bun install
+      - name: Install dependencies
+        run: pnpm install # 또는 pnpm install / yarn install / bun install
       - name: Build with VitePress
         run: pnpm run docs:build # 또는 pnpm docs:build / yarn docs:build / bun run docs:build
       - name: Upload artifact
