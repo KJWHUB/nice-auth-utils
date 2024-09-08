@@ -34,6 +34,7 @@
     "build": "pnpm clean && pnpm build:tsc && pnpm build:js",
     "build:js": "node build.js",
     "build:tsc": "pnpm tsc --emitDeclarationOnly",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "clean": "rm -rf dist",
     "docs:build": "vitepress build docs",
     "docs:dev": "vitepress dev docs",
@@ -42,7 +43,8 @@
     "lint": "eslint . && prettier --check .",
     "lint:fix": "eslint --fix . && prettier --write .",
     "prepack": "pnpm build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "version": "pnpm changelog && git add CHANGELOG.md"
   },
   "lint-staged": {
     "*.!(cjs|js|ts)": "prettier --write --ignore-unknown",
@@ -62,6 +64,7 @@
     "@eslint/js": "^9.9.1",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^22.5.0",
+    "conventional-changelog-cli": "^5.0.0",
     "esbuild": "^0.23.1",
     "eslint": "^9.9.1",
     "eslint-config-prettier": "^9.1.0",
