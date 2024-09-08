@@ -53,8 +53,6 @@ jobs:
           git add CHANGELOG.md
           git commit -m 'chore: update changelog'
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
