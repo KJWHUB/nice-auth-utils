@@ -12,7 +12,8 @@ on:
 
 # GitHub Pages에 배포할 수 있도록 GITHUB_TOKEN의 권한을 설정합니다.
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
   pages: write
   id-token: write
 
