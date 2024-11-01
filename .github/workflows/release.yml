@@ -1,0 +1,50 @@
+name: Publish src to npm
+
+on:
+  push:
+    branches: [main] # main 브랜치에 푸시될 때 실행
+
+permissions:
+  contents: write
+  pull-requests: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build src
+        run: pnpm run build # src 코드 빌드
+
+      - name: Bump version and Generate Changelog
+        run: |
+          npm version patch -m "chore: release %s"
+          npx conventional-changelog -p angular -i CHANGELOG.md -s
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to npm
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add package.json CHANGELOG.md
+          git commit -m "chore: bump version and update changelog"
+          git push
