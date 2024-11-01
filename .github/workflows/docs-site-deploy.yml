@@ -1,6 +1,4 @@
-# VitePress 사이트를 GitHub Pages에 빌드하고 배포하는 샘플 워크플로우
-#
-name: VitePress 사이트를 Pages에 배포
+name: Docs 사이트를 GitHub Pages에 배포
 
 on:
   # `main` 브랜치를 대상으로 하는 푸시에서 실행됩니다. 기본 브랜치로 `master`를 사용하는 경우 여기를 `master`로 변경하세요.
