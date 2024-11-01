@@ -15,7 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v3 # pnpm을 사용하는 경우 주석 해제
 
       - name: Setup Node
         uses: actions/setup-node@v4
